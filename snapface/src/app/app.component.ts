@@ -1,26 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
 import { FaceSnap } from './models/face-snap';
+import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
+import { HeaderComponent } from "./header/header.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    FaceSnapComponent
-  ],
+    RouterOutlet,
+    HeaderComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
-  mySnap!: FaceSnap;
-
-  ngOnInit(): void {
-      this.mySnap = new FaceSnap(
-        'Archibald',
-        'Mon meilleur ami',
-        new Date(),
-        0,
-        'https://miro.medium.com/v2/resize:fit:1400/1*bMgQ8MhbnQexpqHgIgBJPA.png'
-      )
-  }
+export class AppComponent  {
 }
